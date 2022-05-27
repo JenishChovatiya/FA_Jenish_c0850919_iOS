@@ -64,9 +64,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gm-Rj-QDe">
                                                 <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="Z5O-QD-vZY"/>
                                                 </connections>
@@ -74,9 +78,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6d-b6-CCY">
                                                 <rect key="frame" x="126" y="0.0" width="121" height="121"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="DwB-Ni-fC3"/>
                                                 </connections>
@@ -84,9 +92,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kt-Hm-ele">
                                                 <rect key="frame" x="252" y="0.0" width="121" height="121"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="gp2-OJ-ygO"/>
                                                 </connections>
@@ -99,9 +111,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-da-q17">
                                                 <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="S2R-qg-Pcy"/>
                                                 </connections>
@@ -109,9 +125,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dg5-hi-IeQ">
                                                 <rect key="frame" x="126" y="0.0" width="121" height="121"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="qsA-nL-sZj"/>
                                                 </connections>
@@ -119,9 +139,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32v-rp-vuq">
                                                 <rect key="frame" x="252" y="0.0" width="121" height="121"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="e8p-FC-RFD"/>
                                                 </connections>
@@ -134,9 +158,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTt-wL-mdM">
                                                 <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="Hfd-iC-MQM"/>
                                                 </connections>
@@ -144,9 +172,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEB-IK-FTm">
                                                 <rect key="frame" x="126" y="0.0" width="121" height="121"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="RuK-tr-xgL"/>
                                                 </connections>
@@ -154,9 +186,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqK-LP-yz5">
                                                 <rect key="frame" x="252" y="0.0" width="121" height="121"/>
                                                 <color key="backgroundColor" systemColor="tintColor"/>
-                                                <color key="tintColor" systemColor="tintColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </backgroundConfiguration>
+                                                </buttonConfiguration>
                                                 <connections>
                                                     <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="41L-6H-BIH"/>
                                                 </connections>
