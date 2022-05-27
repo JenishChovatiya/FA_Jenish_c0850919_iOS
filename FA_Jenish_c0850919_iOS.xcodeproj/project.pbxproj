@@ -13,6 +13,7 @@
 		E3741FCB2840360A00A11CEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3741FC92840360A00A11CEC /* Main.storyboard */; };
 		E3741FCD2840360B00A11CEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3741FCC2840360B00A11CEC /* Assets.xcassets */; };
 		E3741FD02840360B00A11CEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3741FCE2840360B00A11CEC /* LaunchScreen.storyboard */; };
+		E38A0C6E2841816F000FBFA4 /* logicalPartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38A0C6D2841816F000FBFA4 /* logicalPartVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E3741FCC2840360B00A11CEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3741FCF2840360B00A11CEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3741FD12840360B00A11CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E38A0C6D2841816F000FBFA4 /* logicalPartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logicalPartVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E3741FC32840360A00A11CEC /* AppDelegate.swift */,
 				E3741FC52840360A00A11CEC /* SceneDelegate.swift */,
 				E3741FC72840360A00A11CEC /* ViewController.swift */,
+				E38A0C6D2841816F000FBFA4 /* logicalPartVC.swift */,
 				E3741FC92840360A00A11CEC /* Main.storyboard */,
 				E3741FCC2840360B00A11CEC /* Assets.xcassets */,
 				E3741FCE2840360B00A11CEC /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3741FC82840360A00A11CEC /* ViewController.swift in Sources */,
+				E38A0C6E2841816F000FBFA4 /* logicalPartVC.swift in Sources */,
 				E3741FC42840360A00A11CEC /* AppDelegate.swift in Sources */,
 				E3741FC62840360A00A11CEC /* SceneDelegate.swift in Sources */,
 			);

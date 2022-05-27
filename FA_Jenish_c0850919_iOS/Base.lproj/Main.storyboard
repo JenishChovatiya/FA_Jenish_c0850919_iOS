@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="868" y="92"/>
         </scene>
-        <!--View Controller-->
+        <!--Logical PartVC-->
         <scene sceneID="EMa-8Y-XiY">
             <objects>
-                <viewController id="pJ8-tQ-idc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logicalPartVC" id="pJ8-tQ-idc" customClass="logicalPartVC" customModule="FA_Jenish_c0850919_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GGa-xv-N3y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,6 +67,9 @@
                                                 <color key="tintColor" systemColor="tintColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="Z5O-QD-vZY"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6d-b6-CCY">
                                                 <rect key="frame" x="126" y="0.0" width="121" height="121"/>
@@ -74,6 +77,9 @@
                                                 <color key="tintColor" systemColor="tintColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="DwB-Ni-fC3"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Kt-Hm-ele">
                                                 <rect key="frame" x="252" y="0.0" width="121" height="121"/>
@@ -81,6 +87,9 @@
                                                 <color key="tintColor" systemColor="tintColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="gp2-OJ-ygO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -93,6 +102,9 @@
                                                 <color key="tintColor" systemColor="tintColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="S2R-qg-Pcy"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dg5-hi-IeQ">
                                                 <rect key="frame" x="126" y="0.0" width="121" height="121"/>
@@ -100,6 +112,9 @@
                                                 <color key="tintColor" systemColor="tintColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="qsA-nL-sZj"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32v-rp-vuq">
                                                 <rect key="frame" x="252" y="0.0" width="121" height="121"/>
@@ -107,6 +122,9 @@
                                                 <color key="tintColor" systemColor="tintColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="e8p-FC-RFD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -119,6 +137,9 @@
                                                 <color key="tintColor" systemColor="tintColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="Hfd-iC-MQM"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BEB-IK-FTm">
                                                 <rect key="frame" x="126" y="0.0" width="121" height="121"/>
@@ -126,6 +147,9 @@
                                                 <color key="tintColor" systemColor="tintColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="RuK-tr-xgL"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqK-LP-yz5">
                                                 <rect key="frame" x="252" y="0.0" width="121" height="121"/>
@@ -133,6 +157,9 @@
                                                 <color key="tintColor" systemColor="tintColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="tapAction:" destination="pJ8-tQ-idc" eventType="touchUpInside" id="41L-6H-BIH"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -142,16 +169,16 @@
                                     <constraint firstAttribute="width" secondItem="dnN-zk-GMd" secondAttribute="height" multiplier="1:1" id="PGU-x2-Fxq"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RP-Ey-m89">
-                                <rect key="frame" x="50" y="108" width="67" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <color key="textColor" red="0.364705890417099" green="0.17254902422428131" blue="0.074509806931018829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="O" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBn-cn-cIS">
                                 <rect key="frame" x="70" y="159" width="35" height="65"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="45"/>
                                 <color key="textColor" red="0.36470589040000001" green="0.17254902420000001" blue="0.074509806930000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RP-Ey-m89">
+                                <rect key="frame" x="54" y="108" width="67" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <color key="textColor" red="0.364705890417099" green="0.17254902422428131" blue="0.074509806931018829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -172,6 +199,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W6Y-oo-92V"/>
+                    <connections>
+                        <outlet property="eighth" destination="BEB-IK-FTm" id="jLu-OY-X2t"/>
+                        <outlet property="fifth" destination="Dg5-hi-IeQ" id="uhl-KR-Ymz"/>
+                        <outlet property="first" destination="6Gm-Rj-QDe" id="QB5-fn-hKr"/>
+                        <outlet property="forth" destination="ezu-da-q17" id="Qnq-zm-8Qq"/>
+                        <outlet property="ninth" destination="gqK-LP-yz5" id="iKu-xK-OQw"/>
+                        <outlet property="second" destination="C6d-b6-CCY" id="vQi-6c-s67"/>
+                        <outlet property="seventh" destination="BTt-wL-mdM" id="EMq-Cu-u2H"/>
+                        <outlet property="showCurrentTurn" destination="hBn-cn-cIS" id="Ql7-XL-57B"/>
+                        <outlet property="sixth" destination="32v-rp-vuq" id="Zy7-9x-EAq"/>
+                        <outlet property="third" destination="5Kt-Hm-ele" id="kb1-eX-2Sv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3U-Le-Ytc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
