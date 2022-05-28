@@ -34,6 +34,11 @@ class logicalPartVC: UIViewController
     @IBOutlet weak var ninth: UIButton!
     
     
+    @IBOutlet weak var crossWinerCounter: UILabel!
+    @IBOutlet weak var circleWinerCounter: UILabel!
+    
+    
+    
     //declaring some variables
     var turnone = letTurn.cross
     var currentTurn = letTurn.cross
@@ -53,17 +58,15 @@ class logicalPartVC: UIViewController
         initializetheboard()
         
         
-        
-       
     }
     
     
+   
     //creating function for shake gesture recognizer for undo user's move
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?)
     {
         print("Shake Gesture Recognized !!")
-        
-        
+       
         
     }
     
@@ -78,14 +81,18 @@ class logicalPartVC: UIViewController
         
         if checkUserWin(Cross)
         {
+            displayScore(i: 1)
             defaultCross += 1
             alertForResult(title: "X is the winer")
+            
         }
         
         if checkUserWin(Circle)
         {
+            displayScore(i: 2)
             defaultCircle += 1
             alertForResult(title: "O is the winer")
+            
         }
         
         if(whenboardfull())
@@ -97,6 +104,8 @@ class logicalPartVC: UIViewController
     //function that will check the victory
     func checkUserWin(_ s :String) -> Bool
     {
+        
+        
         //now applay for victory conditions for Horizontal
         if symbol(first, s) && symbol(second, s) && symbol(third, s)
         {
@@ -110,6 +119,9 @@ class logicalPartVC: UIViewController
         {
             return true
         }
+        
+        
+        
         
         
         //now applay for victory conditions for Vertical
@@ -126,6 +138,9 @@ class logicalPartVC: UIViewController
             return true
         }
         
+        
+        
+        
         //now applaing for diagnal Victory
         if symbol(first, s) && symbol(fifth, s) && symbol(ninth, s)
         {
@@ -140,26 +155,38 @@ class logicalPartVC: UIViewController
         
     }
     
+    
+    
+    
     func symbol(_ button: UIButton, _ symbol: String) -> Bool
     {
         return button.title(for: .normal) == symbol
     }
     
+    
+    
+    
     //displaying result
     func alertForResult(title: String)
     {
         //displaying score of circle or cross in alert box
-        _ = "\n Circle" + String(defaultCircle) + "\n Cross " + String(defaultCross)
+        let printWiners = "\n Circle" + String(defaultCircle) + "\n Cross " + String(defaultCross)
         
         
-        let controllingtoAlert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+        
+        
+        let controllingtoAlert = UIAlertController(title: title, message: printWiners, preferredStyle: .actionSheet)
         
         controllingtoAlert.addAction(UIAlertAction(title: "Reset the Board", style: .default, handler: { (_) in self.resetBoard()
         }))
         self.present(controllingtoAlert, animated: true)
     }
     
-    //reseting the board
+    
+    
+    
+    
+    //this function will use to reset the board
     func resetBoard()
     {
         for button in board
@@ -179,7 +206,39 @@ class logicalPartVC: UIViewController
             
         }
         currentTurn = turnone
+      
     }
+    
+    
+    
+    
+    //this function will display the result that which user win's how many time
+    func displayScore(i: Int)
+    {
+
+        
+       /* let displayScoreofCircle = "\n Circle" + String(defaultCircle)
+        let displayScoreOfCross = "\n Cross " + String(defaultCross)
+        
+        
+        crossWinerCounter.text = displayScoreOfCross
+        circleWinerCounter.text = displayScoreofCircle*/
+        
+
+        if(i == 1)
+        {
+            let displayScoreofCircle =  String(defaultCircle)
+            crossWinerCounter.text = displayScoreofCircle
+        }
+
+        if(i == 2)
+        {
+            let displayScoreOfCross = String(defaultCross)
+            circleWinerCounter.text = displayScoreOfCross
+        }
+
+    }
+
     
     
     func whenboardfull() -> Bool
