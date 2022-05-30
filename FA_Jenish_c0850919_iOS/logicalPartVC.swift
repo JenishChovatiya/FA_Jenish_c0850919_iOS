@@ -7,6 +7,19 @@
 
 import UIKit
 
+enum numberMove : String
+{
+    case btn1
+    case btn2
+    case btn3
+    case btn4
+    case btn5
+    case btn6
+    case btn7
+    case btn8
+    case btn9
+}
+
 class logicalPartVC: UIViewController
 {
 
@@ -94,30 +107,8 @@ class logicalPartVC: UIViewController
                 self.defaultCircle = 0
                 
                 //reset the score from board as well
-                self.circleWinerCounter.text = "Score  : \(self.defaultCircle)"
-                self.crossWinerCounter.text = "Score  : \(self.defaultCross)"
-            }))
-            self.present(alertCont, animated: true)
-            
-            
-            
-            //case for left swipe
-        case .left:
-            
-            print("Left Swipe gesture recognized")
-            
-            let passMessage = "do you want to Reset?"
-            
-            //apllaying alertcontrollar for controlling the alert
-            let alertCont = UIAlertController(title: "By reseting the Board you will loose your on going board !", message: passMessage, preferredStyle: .actionSheet)
-            alertCont.addAction(UIAlertAction(title: "Please Confirm!", style: .default, handler: {
-                (_) in self.resetBoard()//reseting the board
-                self.defaultCross = 0 // than reseting the score
-                self.defaultCircle = 0
-                
-                //than reseting the score from scorreboard as well
-                self.circleWinerCounter.text = "Score  : \(self.defaultCircle)"
-                self.crossWinerCounter.text = "Score  : \(self.defaultCross)"
+                self.circleWinerCounter.text = "\(self.defaultCircle)"
+                self.crossWinerCounter.text = " \(self.defaultCross)"
             }))
             self.present(alertCont, animated: true)
             
@@ -125,7 +116,7 @@ class logicalPartVC: UIViewController
         default:
             print("Something wrong")
             break
-            
+
             
         }
     }
@@ -143,10 +134,36 @@ class logicalPartVC: UIViewController
     }
     
     
+    //creating some functions regarding database
+    func userTurnMove(turnmove : String) -> String
+    {
+        if turnmove == "X"
+        {
+            return "O"
+        }
+        else
+        {
+            return "X"
+        }
+    }
+    
+    func userNextMoveEnum(turnmove : String) -> letTurn
+    {
+        if turnmove == "X"
+        {
+            return letTurn.circle
+            
+        }
+        else
+        {
+            return letTurn.cross
+        }
+    }
+    
+    
     
     
     //MARK: creating action that will respones when user will touch any of the button
-    
     @IBAction func tapAction(_ sender: UIButton)
     {
         applaytoboard(sender)
