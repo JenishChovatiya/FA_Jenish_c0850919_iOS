@@ -14,7 +14,7 @@ class CoreDataHelper {
     
     func dataCount() -> Int {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
-        fetchRequest.predicate = NSPredicate(format: "id = %@", "Tic Tac Toe Game")
+        fetchRequest.predicate = NSPredicate(format: "userID = %@", "Game")
         
         let manageTxt =
         appDelegate.persistentContainer.viewContext
@@ -44,7 +44,7 @@ class CoreDataHelper {
         let objEtity = NSEntityDescription.insertNewObject(forEntityName: "Entity", into: manageTxt) as! Entity
         
         objEtity.turnStart = turn
-        objEtity.userID = "Tic Tac Toe Game"
+        objEtity.userID = "Game"
         
         do {
             try manageTxt.save()
@@ -57,7 +57,7 @@ class CoreDataHelper {
     //store game
     func addUsersGame(move : numberMove, turn : String, start : String) {
         let fetchGameRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
-        fetchGameRequest.predicate = NSPredicate(format: "id = %@", "Tic Tac Toe Game")
+        fetchGameRequest.predicate = NSPredicate(format: "userID = %@", "Game")
         
         let manageTxt =
         appDelegate.persistentContainer.viewContext
@@ -90,7 +90,7 @@ class CoreDataHelper {
     //cheking turn and change the turn
     func changeUsersTurn(move : String) {
         let fetchUserRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
-        fetchUserRequest.predicate = NSPredicate(format: "id = %@", "Tic Tac Toe Game")
+        fetchUserRequest.predicate = NSPredicate(format: "userID = %@", "Game")
         
         let manageTxt =
         appDelegate.persistentContainer.viewContext
@@ -113,8 +113,8 @@ class CoreDataHelper {
     
     //function for removing last move
     func removeLastMoveOfUser(turn : String) {
-        let fetchUserRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GameEntity")
-        fetchUserRequest.predicate = NSPredicate(format: "id = %@", "Tic Tac Toe Game")
+        let fetchUserRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
+        fetchUserRequest.predicate = NSPredicate(format: "userID = %@", "Game")
         
         let manageTxt =
         appDelegate.persistentContainer.viewContext
@@ -142,7 +142,7 @@ class CoreDataHelper {
     
     func updateCircle(count : Int) {
         let fetchUserRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
-        fetchUserRequest.predicate = NSPredicate(format: "id = %@", "Tic Tac Toe Game")
+        fetchUserRequest.predicate = NSPredicate(format: "userID = %@", "Game")
         
         let manageTxt =
         appDelegate.persistentContainer.viewContext
@@ -163,7 +163,7 @@ class CoreDataHelper {
     
     func updateCross(count : Int) {
         let fetchUserRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
-        fetchUserRequest.predicate = NSPredicate(format: "id = %@", "Tic Tac Toe Game")
+        fetchUserRequest.predicate = NSPredicate(format: "userID = %@", "Game")
         
         let manageTxt =
         appDelegate.persistentContainer.viewContext
@@ -202,8 +202,8 @@ class CoreDataHelper {
     }
     
     func resetUserData() {
-        let fetchUserRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GameEntity")
-        fetchUserRequest.predicate = NSPredicate(format: "id = %@", "Tic Tac Toe Game")
+        let fetchUserRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entity")
+        fetchUserRequest.predicate = NSPredicate(format: "userID = %@", "Game")
         
         let manageTxt =
         appDelegate.persistentContainer.viewContext

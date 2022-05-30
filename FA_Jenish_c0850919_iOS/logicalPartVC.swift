@@ -161,6 +161,7 @@ class logicalPartVC: UIViewController
                 //reset the score from board as well
                 self.circleWinerCounter.text = "\(self.defaultCircle)"
                 self.crossWinerCounter.text = " \(self.defaultCross)"
+                CoreDataHelper.instance.resetUserData()
             }))
             self.present(alertCont, animated: true)
             
@@ -399,6 +400,9 @@ class logicalPartVC: UIViewController
     //MARK: displaying result
     func alertForResult(title: String)
     {
+        
+        CoreDataHelper.instance.updateCross(count: defaultCross)
+        CoreDataHelper.instance.updateCircle(count: defaultCircle)
         //displaying winner either circle or cross in alert box
         let controllingtoAlert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         
@@ -431,6 +435,12 @@ class logicalPartVC: UIViewController
             
         }
         currentTurn = turnone
+        if currentTurn == .cross{
+            CoreDataHelper.instance.changeUsersTurn(move: "X")
+            
+        }else{
+            CoreDataHelper.instance.changeUsersTurn(move: "O")
+        }
       
     }
     
