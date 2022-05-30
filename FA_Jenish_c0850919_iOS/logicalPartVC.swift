@@ -180,11 +180,93 @@ class logicalPartVC: UIViewController
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?)
     {
       
-        
-        print("Shake Gesture Recognized !!")
+        if let _ = buttonArray.last
+        {
+            if motion == .motionShake
+            {
+                print("Shake Gesture Recognized !!")
+                
+                //applaying undo function
+                
+                performUndoOperation()
+                
+                
+                var tempdisplay = ""
+                if(currentTurn == letTurn.circle)
+                {
+                    currentTurn = letTurn.cross
+                    showCurrentTurn.text = Cross
+                    tempdisplay = "X"
+                }
+                else if (currentTurn == letTurn.cross)
+                {
+                    currentTurn = letTurn.circle
+                    showCurrentTurn.text = Circle
+                    tempdisplay = "O"
+                }
+                CoreDataHelper.instance.removeLastMoveOfUser(turn: tempdisplay)
+            }
+        }
+       
        
         
     }
+    
+    //MARK: Creating Undo function
+    func performUndoOperation()
+    {
+        if let tglast = buttonArray.last
+        {
+            if(tglast == 1)
+            {
+                first.setTitle(nil, for: .normal)
+                first.isEnabled = true
+            }
+            else if (tglast == 2)
+            {
+                second.setTitle(nil, for: .normal)
+                second.isEnabled = true
+            }
+            else if (tglast == 3)
+            {
+                third.setTitle(nil, for: .normal)
+                third.isEnabled = true
+            }
+            else if (tglast == 4)
+            {
+                forth.setTitle(nil, for: .normal)
+                forth.isEnabled = true
+            }
+            else if (tglast == 5)
+            {
+                fifth.setTitle(nil, for: .normal)
+                fifth.isEnabled = true
+            }
+            else if (tglast == 6)
+            {
+                sixth.setTitle(nil, for: .normal)
+                sixth.isEnabled = true
+            }
+            else if (tglast == 7)
+            {
+                seventh.setTitle(nil, for: .normal)
+                seventh.isEnabled = true
+            }
+            else if (tglast == 8)
+            {
+                eighth.setTitle(nil, for: .normal)
+                eighth.isEnabled = true
+            }
+            else if (tglast == 9)
+            {
+                ninth.setTitle(nil, for: .normal)
+                ninth.isEnabled = true
+            }
+            buttonArray.removeLast()
+        }
+    }
+    
+    
     
     
     //creating some functions regarding database
@@ -212,6 +294,7 @@ class logicalPartVC: UIViewController
             return letTurn.cross
         }
     }
+    
     
     
     
@@ -244,7 +327,9 @@ class logicalPartVC: UIViewController
         }
     }
     
-    //function that will check the victory
+    
+    
+    //MARK: function that will check the victory
     func checkUserWin(_ s :String) -> Bool
     {
         
@@ -263,11 +348,13 @@ class logicalPartVC: UIViewController
             return true
         }
         
+     
+       
         
         
         
         
-        //now applay for victory conditions for Vertical
+        //MARK: now applay for victory conditions for Vertical
         if symbol(first, s) && symbol(forth, s) && symbol(seventh, s)
         {
             return true
@@ -350,7 +437,7 @@ class logicalPartVC: UIViewController
     
     
  
-    
+    //this function will execute if non of any user win and non of any block is left to paly
     func whenboardfull() -> Bool
     {
         for button in board
@@ -395,28 +482,90 @@ class logicalPartVC: UIViewController
         
     }
     
+    
+    
+    func takeMove(index : Int) -> numberMove
+    {
+        var mo = numberMove.first
+        if index == 1
+        {
+            mo = .first
+        }
+        else if(index == 2)
+        {
+            mo = .second
+        }
+        else if(index == 3)
+        {
+            mo = .third
+        }
+        else if(index == 4)
+        {
+            mo = .forth
+        }
+        else if(index == 5)
+        {
+            mo = .fifth
+        }
+        else if(index == 6)
+        {
+            mo = .sixth
+        }
+        else if(index == 7)
+        {
+            mo = .seventh
+        }
+        else if(index == 8)
+        {
+            mo = .eighth
+        }
+        else if(index == 9)
+        {
+            mo = .ninth
+        }
+        return mo
+    }
+    
+    
+    
     //Creating funation called applaytoboard that will recive the sender
     func applaytoboard(_ sender: UIButton)
     {
         if(sender.title(for: .normal) == nil)
         {
+            var tempTurn = ""
             if(currentTurn == letTurn.circle)
             {
                 sender.setTitle(Circle, for: .normal)
                 currentTurn = letTurn.cross
                 showCurrentTurn.text = Cross
+                tempTurn = "X"
             }
             else if(currentTurn == letTurn.cross)
             {
                 sender.setTitle(Cross, for: .normal)
                 currentTurn = letTurn.circle
                 showCurrentTurn.text = Circle
+                tempTurn = "O"
             }
             sender.isEnabled = false
+            buttonArray.append(sender.tag)
+            
+            var playTurn = ""
+            if turnone == .cross
+            {
+                playTurn = "X"
+            }
+            else
+            {
+                playTurn = "O"
+            }
+            CoreDataHelper.instance.addUsersGame(move: takeMove(index: sender.tag), turn: tempTurn, start: playTurn)
         }
+        
     }
    
-    
+
    
 
 }
