@@ -7,17 +7,18 @@
 
 import UIKit
 
+//creating enum for core data
 enum numberMove : String
 {
-    case btn1
-    case btn2
-    case btn3
-    case btn4
-    case btn5
-    case btn6
-    case btn7
-    case btn8
-    case btn9
+    case first
+    case second
+    case third
+    case forth
+    case fifth
+    case sixth
+    case seventh
+    case eighth
+    case ninth
 }
 
 class logicalPartVC: UIViewController
@@ -77,10 +78,61 @@ class logicalPartVC: UIViewController
         super.viewDidLoad()
         
         
+        //connecting with core data
+        //applying first if else condition
+        if CoreDataHelper.instance.dataCount() == 0
+        {
+            CoreDataHelper.instance.saveData(turn: "X")
+        } else {
+            CoreDataHelper.instance.userGameData()
+            if appDelegate.AryGame.count != 0  {
+                let objGame = appDelegate.AryGame[0] as! Entity
+                showCurrentTurn.text = objGame.turnStart ?? ""
+                if let arrMoves = objGame.array as? [String] {
+                    
+                    defaultCross = Int(objGame.scoreOfX)
+                    defaultCircle = Int(objGame.scoreOfO)
+                    var currentMove = objGame.turnStart ?? "X"
+                    for i in 0..<arrMoves.count {
+                        let btnName = arrMoves[i]
+                        if btnName == "first" {
+                            first.setTitle(currentMove, for: .normal)
+                        } else if btnName == "second" {
+                            second.setTitle(currentMove, for: .normal)
+                        } else if btnName == "third" {
+                            third.setTitle(currentMove, for: .normal)
+                        } else if btnName == "forth" {
+                            forth.setTitle(currentMove, for: .normal)
+                        } else if btnName == "fifth" {
+                            fifth.setTitle(currentMove, for: .normal)
+                        } else if btnName == "sixth" {
+                            sixth.setTitle(currentMove, for: .normal)
+                        } else if btnName == "seventh" {
+                            seventh.setTitle(currentMove, for: .normal)
+                        } else if btnName == "eighth" {
+                            eighth.setTitle(currentMove, for: .normal)
+                        } else if btnName == "ninth" {
+                            ninth.setTitle(currentMove, for: .normal)
+                        }
+                        currentTurn = userNextMoveEnum(turnmove: currentMove)
+                        currentMove = userTurnMove(turnmove: currentMove)
+                        showCurrentTurn.text = currentMove
+                    }
+                }
+                circleWinerCounter.text = String(Int(objGame.scoreOfO))
+                crossWinerCounter.text = String(Int(objGame.scoreOfX))
+            }
+            
+            
+            
+        }
+        
+        
         initializetheboard()
         
         
     }
+    
     
     
     
@@ -128,6 +180,7 @@ class logicalPartVC: UIViewController
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?)
     {
       
+        
         print("Shake Gesture Recognized !!")
        
         
@@ -318,6 +371,17 @@ class logicalPartVC: UIViewController
     //MARK: add in the array of board
     func initializetheboard()
     {
+        first.tag = 1
+        second.tag = 2
+        third.tag = 3
+        forth.tag = 4
+        fifth.tag = 5
+        sixth.tag = 6
+        seventh.tag = 7
+        eighth.tag = 8
+        ninth.tag = 9
+        
+        
         board.append(first)
         board.append(second)
         board.append(third)
