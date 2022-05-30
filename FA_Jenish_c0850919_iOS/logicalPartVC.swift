@@ -34,6 +34,7 @@ class logicalPartVC: UIViewController
     @IBOutlet weak var ninth: UIButton!
     
     
+    //connecting two lables that is displaying the score
     @IBOutlet weak var crossWinerCounter: UILabel!
     @IBOutlet weak var circleWinerCounter: UILabel!
     
@@ -44,27 +45,98 @@ class logicalPartVC: UIViewController
     var currentTurn = letTurn.cross
     
     
-    //declaring varible that will diplay when we will call
+    //declaring varible
+    
+    var buttonArray:[Int] = []
+    
     var Circle = "O"
     var Cross = "X"
     var board = [UIButton]()
     
+   
+ 
     
     //declaring default score of cross and circle as 0
     var defaultCross = 0
     var defaultCircle = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         initializetheboard()
         
         
     }
     
     
+    
+    //MARK: implementing Swip gesture for reseting the game
+    @IBAction func swipeGestureRecognize(_ sender: UISwipeGestureRecognizer)
+    {
+        //applaying switch case for recognizing  direction and baed on it applaying condition's for reset the board
+        switch sender.direction
+        {
+            
+            //case for right swipe
+        case .right:
+            
+            print("Right Swipe gesture recognized")
+            
+            
+            let passMessage = "do you want to Reset?"
+            
+            //apllaying alertcontrollar for controlling the alert
+            let alertCont = UIAlertController(title: "By reseting the Board you will loose your on going board !", message: passMessage, preferredStyle: .actionSheet)
+            alertCont.addAction(UIAlertAction(title: "Please Confirm!", style: .default, handler: {
+                (_) in self.resetBoard()//reset the board
+                self.defaultCross = 0//reset the score
+                self.defaultCircle = 0
+                
+                //reset the score from board as well
+                self.circleWinerCounter.text = "Score  : \(self.defaultCircle)"
+                self.crossWinerCounter.text = "Score  : \(self.defaultCross)"
+            }))
+            self.present(alertCont, animated: true)
+            
+            
+            
+            //case for left swipe
+        case .left:
+            
+            print("Left Swipe gesture recognized")
+            
+            let passMessage = "do you want to Reset?"
+            
+            //apllaying alertcontrollar for controlling the alert
+            let alertCont = UIAlertController(title: "By reseting the Board you will loose your on going board !", message: passMessage, preferredStyle: .actionSheet)
+            alertCont.addAction(UIAlertAction(title: "Please Confirm!", style: .default, handler: {
+                (_) in self.resetBoard()//reseting the board
+                self.defaultCross = 0 // than reseting the score
+                self.defaultCircle = 0
+                
+                //than reseting the score from scorreboard as well
+                self.circleWinerCounter.text = "Score  : \(self.defaultCircle)"
+                self.crossWinerCounter.text = "Score  : \(self.defaultCross)"
+            }))
+            self.present(alertCont, animated: true)
+            
+            
+        default:
+            print("Something wrong")
+            break
+            
+            
+        }
+    }
+    
    
-    //creating function for shake gesture recognizer for undo user's move
+    
+    
+    //MARK: creating function for shake gesture recognizer for undo user's move
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?)
     {
+      
         print("Shake Gesture Recognized !!")
        
         
@@ -73,7 +145,7 @@ class logicalPartVC: UIViewController
     
     
     
-    //creating action that will respones when user will touch any of the button
+    //MARK: creating action that will respones when user will touch any of the button
     
     @IBAction func tapAction(_ sender: UIButton)
     {
@@ -81,17 +153,18 @@ class logicalPartVC: UIViewController
         
         if checkUserWin(Cross)
         {
-            displayScore(i: 1)
             defaultCross += 1
             alertForResult(title: "X is the winer")
+            crossWinerCounter.text = "\(defaultCross)"
             
         }
         
         if checkUserWin(Circle)
         {
-            displayScore(i: 2)
+            
             defaultCircle += 1
             alertForResult(title: "O is the winer")
+            circleWinerCounter.text = "\(defaultCircle)"
             
         }
         
@@ -166,16 +239,11 @@ class logicalPartVC: UIViewController
     
     
     
-    //displaying result
+    //MARK: displaying result
     func alertForResult(title: String)
     {
-        //displaying score of circle or cross in alert box
-        let printWiners = "\n Circle" + String(defaultCircle) + "\n Cross " + String(defaultCross)
-        
-        
-        
-        
-        let controllingtoAlert = UIAlertController(title: title, message: printWiners, preferredStyle: .actionSheet)
+        //displaying winner either circle or cross in alert box
+        let controllingtoAlert = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         
         controllingtoAlert.addAction(UIAlertAction(title: "Reset the Board", style: .default, handler: { (_) in self.resetBoard()
         }))
@@ -186,7 +254,7 @@ class logicalPartVC: UIViewController
     
     
     
-    //this function will use to reset the board
+    //MARK: this function will use to reset the board
     func resetBoard()
     {
         for button in board
@@ -211,35 +279,7 @@ class logicalPartVC: UIViewController
     
     
     
-    
-    //this function will display the result that which user win's how many time
-    func displayScore(i: Int)
-    {
-
-        
-       /* let displayScoreofCircle = "\n Circle" + String(defaultCircle)
-        let displayScoreOfCross = "\n Cross " + String(defaultCross)
-        
-        
-        crossWinerCounter.text = displayScoreOfCross
-        circleWinerCounter.text = displayScoreofCircle*/
-        
-
-        if(i == 1)
-        {
-            let displayScoreofCircle =  String(defaultCircle)
-            crossWinerCounter.text = displayScoreofCircle
-        }
-
-        if(i == 2)
-        {
-            let displayScoreOfCross = String(defaultCross)
-            circleWinerCounter.text = displayScoreOfCross
-        }
-
-    }
-
-    
+ 
     
     func whenboardfull() -> Bool
     {
@@ -258,7 +298,7 @@ class logicalPartVC: UIViewController
     
     
     
-    //add in the array of board
+    //MARK: add in the array of board
     func initializetheboard()
     {
         board.append(first)

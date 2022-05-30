@@ -54,6 +54,10 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background " translatesAutoresizingMaskIntoConstraints="NO" id="Zly-jK-Bcd">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gOD-MJ-fzm" appends="YES" id="oda-ci-WUy"/>
+                                </connections>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dnN-zk-GMd">
                                 <rect key="frame" x="20.5" y="261.5" width="373" height="373"/>
@@ -281,6 +285,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3U-Le-Ytc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="gOD-MJ-fzm">
+                    <connections>
+                        <action selector="swipeGestureRecognize:" destination="pJ8-tQ-idc" id="Cmq-Zb-Lrf"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1644.9275362318842" y="91.741071428571431"/>
         </scene>
